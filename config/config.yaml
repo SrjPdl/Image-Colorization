@@ -1,0 +1,30 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://s3.amazonaws.com/fast-ai-coco/coco_sample.tgz
+  local_data_file: artifacts/data_ingestion/coco_sample.tgz
+  unzip_dir: artifacts/data_ingestion
+
+data_preparation:
+  data_dir: artifacts/data_ingestion/coco_sample/train_sample
+  num_images_to_use: 10_000
+  val_size: 0.2
+  seed: 42
+  prepare_path: artifacts/data_preparation
+
+data_transformation:
+  size: 256
+  random_horizontal_flip_p: 0.5
+  random_vertical_flip_p: 0.5
+  random_rotation_range: 20
+
+data_loader:
+  train_file: artifacts/data_preparation/train.txt
+  val_file: artifacts/data_preparation/val.txt
+
+train_outputs:
+  model_dir: artifacts/models
+  sample_image_dir: artifacts/sample_images
+  save_img_freq: 5
+

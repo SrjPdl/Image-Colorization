@@ -1,0 +1,9 @@
+train_params:
+  num_epochs: 20
+  batch_size: 32
+  lr_G: 0.0002
+  lr_D: 0.0002
+  adam_beta1: 0.5
+  adam_beta2: 0.999
+  lambda_L1: 100
+  

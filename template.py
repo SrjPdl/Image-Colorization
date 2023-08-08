@@ -3,7 +3,7 @@ from pathlib import Path
 import logging
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
-project_name = "image_colorization_using_GAN"
+project_name = "image_color_gan"
 
 list_of_files = [
     ".github/workflows/.gitkeep",
