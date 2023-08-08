@@ -1,5 +1,4 @@
 alembic==1.11.2
-blinker==1.6.2
 blis==0.7.10
 catalogue==2.0.9
 certifi==2023.7.22
