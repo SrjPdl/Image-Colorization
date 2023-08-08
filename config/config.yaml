@@ -26,5 +26,5 @@ data_loader:
 train_outputs:
   model_dir: artifacts/models
   sample_image_dir: artifacts/sample_images
-  save_img_freq: 5
+  save_img_freq: 50
 

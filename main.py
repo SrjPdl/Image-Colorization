@@ -2,6 +2,9 @@ from img_color_gan import logger
 from img_color_gan.pipeline.pipeline_data_ingestion import DataIngestionTrainingPipeline
 from img_color_gan.pipeline.pipeline_data_preparation import DataPreparationPipeline
 from img_color_gan.pipeline.pipeline_train import TrainPipeline
+import mlflow
+
+mlflow.set_tracking_uri("https://dagshub.com/Suraj-Poudel/Image-Colorization.mlflow")
 
 STAGE_NAME = "Data Ingestion stage"
 try:

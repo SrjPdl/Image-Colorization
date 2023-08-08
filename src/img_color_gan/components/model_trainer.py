@@ -3,6 +3,7 @@ from img_color_gan.utils.common import create_loss_meters, update_losses, log_re
 from img_color_gan import logger
 from tqdm import tqdm
 from pathlib import Path
+import mlflow
 
 class ModelTrainer:
     def __init__(self, config, model, train_dl, val_dl, train_output_config):
@@ -27,5 +28,6 @@ class ModelTrainer:
                     logger.info(f"Iteration {i}/{len(self.train_dl)}")
                     log_results(loss_meter_dict) # function to print out the losses
                     visualize(self.model, data, epoch = e, iteration = i, save_path=self.train_output_config.sample_image_dir) # function displaying the model's outputs
+        
         logger.info(f"Saving model at {self.train_output_config.model_dir}")
         save_ckpt(e, self.model, self.train_output_config.model_dir)
