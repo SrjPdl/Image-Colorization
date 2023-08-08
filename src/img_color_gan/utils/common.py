@@ -167,7 +167,7 @@ def save_ckpt(epoch, model, save_dir):
             'model_state_dict': model.state_dict(),
         }
     os.makedirs(save_dir, exist_ok = True)
-    torch.save(ckpt, save_dir + "/model_ckpt.pt")
+    torch.save(ckpt, f"{save_dir}/model_ckpt_{time.time()}.pt")
 
 def load_ckpt(ckpt, model):
     """Loads the checkpoint of the model.
