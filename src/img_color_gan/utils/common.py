@@ -169,7 +169,7 @@ def save_ckpt(epoch, model, save_dir):
     os.makedirs(save_dir, exist_ok = True)
     torch.save(ckpt, f"{save_dir}/model_ckpt_{time.time()}.pt")
 
-def load_ckpt(ckpt, model):
+def load_ckpt(ckpt, model, map_location):
     """Loads the checkpoint of the model.
 
     Args:
@@ -180,7 +180,7 @@ def load_ckpt(ckpt, model):
      tuple: A tuple containing the loaded model, and epoch trained.
     """
         
-    ckpt_loaded = torch.load(ckpt)
+    ckpt_loaded = torch.load(ckpt, map_location = map_location)
     model.load_state_dict(ckpt_loaded['model_state_dict'])
     epoch_trained = ckpt_loaded['epoch']
     return model, epoch_trained

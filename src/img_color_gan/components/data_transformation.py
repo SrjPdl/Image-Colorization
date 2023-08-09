@@ -17,7 +17,7 @@ class DataTransformation:
                 transforms.RandomRotation(self.config.random_rotation_range)
                 ])
             return transform
-        elif split == "val":
+        elif split == "val" or split == "test":
             transform = transforms.Compose([
                 transforms.Resize((self.config.size, self.config.size),  Image.BICUBIC)
                 ])
